@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
      if (err) {
        res.status(401).json({ message: 'NO! This ain’t it!' });
      } else {
-       res.decodedJwt = decodedToken;
+       req.decodedJwt = decodedToken;
        next();
      }
    });

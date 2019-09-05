@@ -8,12 +8,12 @@ router.get('/', (req, res) => {
   };
 
   axios
-    .get('http://res.cloudinary.com/morganart', requestOptions)
+    .get('	http://res.cloudinary.com/morganart ', requestOptions)
     .then(response => {
       res.status(200).json(response.data.results);
     })
     .catch(err => {
-      res.status(500).json({ message: 'Error Fetching Jokes', error: err });
+      res.status(500).json({ message: 'Error Fetching images', error: err });
     });
 });
 
