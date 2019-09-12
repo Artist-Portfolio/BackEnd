@@ -9,6 +9,10 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     tbl
+      .integer("likes")
+      .unsigned()
+      .defaultTo(0);
+    tbl
       .integer("user_id")
       .references("id")
       .inTable("users");
