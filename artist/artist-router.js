@@ -17,7 +17,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/new", async (req, res) => {
   const artData = req.body;
   const newArt = await Artwork.addArtwork(artData);
 
@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/artwork/:id", async (req, res) => {
   const { id } = req.params;
   const change = req.body;
 
@@ -47,7 +47,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/artwork/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
